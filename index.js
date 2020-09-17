@@ -1,11 +1,16 @@
-import trekVars from 'postcss-trek-vars';
-import trekColor from 'postcss-trek-color';
-import trekAnimation from 'postcss-trek-animation';
-import trekAtMedia from 'postcss-trek-at-media';
-import trekLayer from 'postcss-trek-layer';
+const trekVars = require('postcss-trek-vars');
+const trekColor = require('postcss-trek-color');
+const trekAnimation = require('postcss-trek-animation');
+const trekAtMedia = require('postcss-trek-at-media');
+const trekLayer = require('postcss-trek-layer');
 
 const defaults = {
-  'primary-color': '#abcdef',
+  'primary-color': '#1774FF',
+  
+  'font-size': '1rem',
+  'line-height': 1.5,
+  'font-family': 'sans-serif',
+  
   'transition-duration': '400ms',
   'transition-function': 'cubic-ease-in-out',
   
@@ -40,4 +45,4 @@ function trek(options = defaults) {
 
 trek.postcss = true;
 
-export default trek;
+module.exports = trek;
