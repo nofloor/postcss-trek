@@ -1,4 +1,5 @@
 const postcss = require('postcss');
+
 const trekVars = require('postcss-trek-vars');
 const trekColor = require('postcss-trek-color');
 const trekAnimation = require('postcss-trek-animation');
@@ -23,7 +24,9 @@ const defaults = {
   }
 }
 
-module.exports = postcss.plugin('postcss-trek', (options = defaults) => root => {
+module.exports = postcss.plugin('postcss-trek', (opts = defaults) => root => {
+  
+  const options = Object.assign({}, defaults, opts);
   
   const plugins = [
     trekVars(options),
