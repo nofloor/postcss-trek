@@ -4,18 +4,14 @@
   "description": "CSS postprocessing library for Trek.",
   "main": "index.js",
   "dependencies": {
+    "postcss": "^7.0.34",
     "postcss-trek-animation": "^0.2.0",
     "postcss-trek-at-media": "^0.2.0",
     "postcss-trek-color": "^0.2.0",
     "postcss-trek-layer": "^0.2.0",
     "postcss-trek-vars": "^0.2.0"
   },
-  "devDependencies": {
-    "postcss": "^8.0.3"
-  },
-  "peerDependencies": {
-    "postcss": "^8.0.3"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

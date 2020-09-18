@@ -1,3 +1,4 @@
+const postcss = require('postcss');
 const trekVars = require('postcss-trek-vars');
 const trekColor = require('postcss-trek-color');
 const trekAnimation = require('postcss-trek-animation');
@@ -22,7 +23,8 @@ const defaults = {
   }
 }
 
-function trek(options = defaults) {
+module.exports = postcss.plugin('postcss-trek', (options = defaults) => root => {
+  
   const plugins = [
     trekVars(options),
     trekColor(options),
@@ -30,19 +32,11 @@ function trek(options = defaults) {
     trekLayer(options)
   ];
   
-  return {
-    postcssPlugin: 'postcss-trek',
-    Declaration(decl) {
-      plugins.forEach(plugin => undefined !== plugin['Declaration'] ? plugin['Declaration'](decl) : null)
-    },
-    AtRule: {
-      media: atRule => {
-        trekAtMedia(options)['AtRule']['media'](atRule);
-      }
-    }
-  }
-}
-
-trek.postcss = true;
-
-module.exports = trek;
+  root.walkDecls(decl => {
+    plugins.forEach(plugin => undefined !== plugin['Declaration'] ? plugin['Declaration'](decl) : null);
+  });
+  
+  root.walkAtRules(atRule => {
+    if (atRule.name === 'media') trekAtMedia(options)['AtRule']['media'](atRule);
+  })
+});
