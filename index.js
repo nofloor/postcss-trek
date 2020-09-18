@@ -8,13 +8,38 @@ const trekLayer = require('postcss-trek-layer');
 
 const defaults = {
   'primary-color': '#1774FF',
+  'secondary-color': null,
+  
+  'danger-color': '#FC5042',
+  'warning-color': '#FC7A42',
+  'success-color': '#1BB55B',
+  'black': '#191B20',
+  'text-color': '#191B20',
   
   'font-size': '1rem',
   'line-height': 1.5,
-  'font-family': 'sans-serif',
+  
+  'font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", Helvetica Neue, Roboto, sans-serif',
+  
+  'block-height': '40px',
+  'magic-unit': '4px',
   
   'transition-duration': '400ms',
   'transition-function': 'cubic-ease-in-out',
+  
+  'button-font-weight': 'bold',
+  'button-font-size': 'inherit',
+  'button-font-family': 'inherit',
+  'button-letter-spacing': 0,
+  'button-border-width': 0,
+  'button-border-radius': '4px',
+  
+  'input-font-size': 'inherit',
+  'input-line-height': 'inherit',
+  'input-color': 'inherit',
+  'input-border-width': 1,
+  'input-border-radius': '4px',
+  'checker-width': '24px',
   
   'media': {
     'palm': 768,
