@@ -5,11 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "postcss": "^7.0.34",
-    "postcss-trek-animation": "^0.2.0",
-    "postcss-trek-at-media": "^0.2.0",
-    "postcss-trek-color": "^0.2.0",
-    "postcss-trek-layer": "^0.2.0",
-    "postcss-trek-vars": "^0.2.0"
+    "postcss-trek-animation": "^1.0.0",
+    "postcss-trek-at-media": "^1.0.0",
+    "postcss-trek-color": "^1.0.0",
+    "postcss-trek-layer": "^1.0.0",
+    "postcss-trek-vars": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
