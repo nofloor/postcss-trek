@@ -16,5 +16,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Taha Kelesoglu (nofloor)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nofloor/postcss-trek.git"
+  },
+  "homepage": "https://github.com/nofloor/postcss-trek",
+  "bugs": {
+    "url": "https://github.com/nofloor/postcss-trek/issues"
+  }
 }
