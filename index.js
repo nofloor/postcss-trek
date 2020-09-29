@@ -1,6 +1,7 @@
 const postcss = require('postcss');
 
 const trekVars = require('postcss-trek-vars');
+const trekPxToRem = require('postcss-trek-px-to-rem');
 const trekColor = require('postcss-trek-color');
 const trekAnimation = require('postcss-trek-animation');
 const trekAtMedia = require('postcss-trek-at-media');
@@ -10,9 +11,9 @@ const defaults = {
   'primary-color': '#1774FF',
   'secondary-color': null,
   
-  'danger-color': '#FC5042',
-  'warning-color': '#FC7A42',
-  'success-color': '#1BB55B',
+  'danger': '#FC5042',
+  'warning': '#FC7A42',
+  'success': '#1BB55B',
   'black': '#191B20',
   'text-color': '#191B20',
   
@@ -55,6 +56,7 @@ module.exports = postcss.plugin('postcss-trek', (opts = defaults) => root => {
   
   const plugins = [
     trekVars(options),
+    trekPxToRem(options),
     trekColor(options),
     trekAnimation(options),
     trekLayer(options)
