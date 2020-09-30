@@ -1,20 +1,23 @@
 {
   "name": "postcss-trek",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "CSS postprocessing library for Trek.",
   "main": "index.js",
   "dependencies": {
     "postcss": "^7.0.34",
     "postcss-trek-animation": "^1.0.0",
     "postcss-trek-at-media": "^1.0.0",
+    "postcss-trek-calculations": "^1.0.0",
     "postcss-trek-color": "^1.0.0",
     "postcss-trek-layer": "^1.0.0",
     "postcss-trek-px-to-rem": "^1.0.0",
     "postcss-trek-vars": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Taha Kelesoglu (nofloor)",
   "license": "MIT",

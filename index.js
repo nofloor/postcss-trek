@@ -1,6 +1,7 @@
 const postcss = require('postcss');
 
 const trekVars = require('postcss-trek-vars');
+const trekCalculations = require('postcss-trek-calculations');
 const trekPxToRem = require('postcss-trek-px-to-rem');
 const trekColor = require('postcss-trek-color');
 const trekAnimation = require('postcss-trek-animation');
@@ -25,7 +26,7 @@ const defaults = {
   'block-height': '40px',
   'magic-unit': '4px',
   
-  'transition-duration': '400ms',
+  'transition-duration': '500ms',
   'transition-function': 'cubic-ease-in-out',
   
   'button-font-weight': 'bold',
@@ -56,6 +57,7 @@ module.exports = postcss.plugin('postcss-trek', (opts = defaults) => root => {
   
   const plugins = [
     trekVars(options),
+    trekCalculations(options),
     trekPxToRem(options),
     trekColor(options),
     trekAnimation(options),
