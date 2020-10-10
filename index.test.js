@@ -32,6 +32,13 @@ test('Trek Calculations', () => {
     .then(result => {
       expect(result.css).toBe('padding: 0 8em 0.5rem 7rem;');
     });
+  
+  css = 'padding: 0 (-trek-block-height / 2);';
+  postcss([trek])
+    .process(css, {from: undefined})
+    .then(result => {
+      expect(result.css).toBe('padding: 0 1.25rem;');
+    });
 });
 
 test('Trek PX to REM', () => {

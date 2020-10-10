@@ -1,6 +1,6 @@
 {
   "name": "postcss-trek",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "CSS postprocessing library for Trek.",
   "main": "index.js",
   "dependencies": {

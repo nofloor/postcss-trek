@@ -23,17 +23,17 @@ const defaults = {
   
   'font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", Helvetica Neue, Roboto, sans-serif',
   
-  'block-height': '40px',
+  'block-height': '32px',
   'magic-unit': '4px',
   
   'transition-duration': '500ms',
-  'transition-function': 'cubic-ease-in-out',
+  'transition-function': 'cubic-ease-out',
   
   'button-font-weight': 'bold',
-  'button-font-size': 'inherit',
+  'button-font-size': '14px',
   'button-font-family': 'inherit',
   'button-letter-spacing': 0,
-  'button-border-width': 0,
+  'button-border-width': '1px',
   'button-border-radius': '4px',
   
   'input-font-size': 'inherit',
