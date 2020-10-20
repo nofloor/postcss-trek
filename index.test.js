@@ -37,7 +37,30 @@ test('Trek Calculations', () => {
   postcss([trek])
     .process(css, {from: undefined})
     .then(result => {
-      expect(result.css).toBe('padding: 0 1.25rem;');
+      expect(result.css).toBe('padding: 0 1rem;');
+    });
+});
+
+test('Trek Select', () => {
+  let css = 'font-size: select(-trek-padding, -trek-font-size, 30px);';
+  postcss([trek])
+    .process(css, {from: undefined})
+    .then(result => {
+      expect(result.css).toBe('font-size: 1rem;');
+    });
+
+  css = 'padding: 0 select(-trek-top, (12*2em/(2+1)), -trek-font-size);';
+  postcss([trek])
+    .process(css, {from: undefined})
+    .then(result => {
+      expect(result.css).toBe('padding: 0 8em;');
+    });
+
+  css = 'padding: 0 select( -trek-dark, -trek-block-height  , 20px);';
+  postcss([trek])
+    .process(css, {from: undefined})
+    .then(result => {
+      expect(result.css).toBe('padding: 0 2rem;');
     });
 });
 
@@ -85,14 +108,14 @@ test('Trek Animation', () => {
   postcss([trek])
     .process(css, {from: undefined})
     .then(result => {
-      expect(result.css).toBe('transition-property: color;transition-duration: 500ms;transition-timing-function: cubic-bezier(0.645,0.045,0.355,1.000);');
+      expect(result.css).toBe('transition-property: color;transition-duration: 500ms;transition-timing-function: cubic-bezier(0.215,0.610,0.355,1.000);');
     });
   
   css = '-trek-transition: color border;';
   postcss([trek])
     .process(css, {from: undefined})
     .then(result => {
-      expect(result.css).toBe('transition-property: color, border;transition-duration: 500ms;transition-timing-function: cubic-bezier(0.645,0.045,0.355,1.000);');
+      expect(result.css).toBe('transition-property: color, border;transition-duration: 500ms;transition-timing-function: cubic-bezier(0.215,0.610,0.355,1.000);');
     });
 });
 
