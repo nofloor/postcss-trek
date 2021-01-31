@@ -1,18 +1,19 @@
 {
   "name": "postcss-trek",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "CSS postprocessing library for Trek.",
   "main": "index.js",
   "dependencies": {
-    "postcss": "^7.0.34",
     "postcss-trek-animation": "^1.0.0",
     "postcss-trek-at-media": "^1.0.0",
     "postcss-trek-calculations": "^1.0.0",
-    "postcss-trek-color": "^1.0.3",
+    "postcss-trek-color": "^1.0.0",
     "postcss-trek-layer": "^1.0.0",
     "postcss-trek-px-to-rem": "^1.0.0",
-    "postcss-trek-select": "^1.0.0",
-    "postcss-trek-vars": "^1.0.8"
+    "postcss-trek-vars": "^1.1.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.4"
   },
   "devDependencies": {
     "jest": "^26.6.0"

@@ -16,6 +16,20 @@ test('Trek Vars', () => {
     .then(result => {
       expect(result.css).toBe('font: bold 1rem/1.5 sans-serif;');
     });
+
+  css = 'line-height: -trek-line-height||14px;';
+  postcss([trek])
+    .process(css, {from: undefined})
+    .then(result => {
+      expect(result.css).toBe('line-height: 1.5;');
+    });
+
+  css = 'padding: -trek-big-bang||2rem -trek-block-height;';
+  postcss([trek])
+    .process(css, {from: undefined})
+    .then(result => {
+      expect(result.css).toBe('padding: 2rem 2.5rem;');
+    });
 });
 
 test('Trek Calculations', () => {
@@ -37,30 +51,7 @@ test('Trek Calculations', () => {
   postcss([trek])
     .process(css, {from: undefined})
     .then(result => {
-      expect(result.css).toBe('padding: 0 1rem;');
-    });
-});
-
-test('Trek Select', () => {
-  let css = 'font-size: select(-trek-padding, -trek-font-size, 30px);';
-  postcss([trek])
-    .process(css, {from: undefined})
-    .then(result => {
-      expect(result.css).toBe('font-size: 1rem;');
-    });
-
-  css = 'padding: 0 select(-trek-top, (12*2em/(2+1)), -trek-font-size);';
-  postcss([trek])
-    .process(css, {from: undefined})
-    .then(result => {
-      expect(result.css).toBe('padding: 0 8em;');
-    });
-
-  css = 'padding: 0 select( -trek-dark, -trek-block-height  , 20px);';
-  postcss([trek])
-    .process(css, {from: undefined})
-    .then(result => {
-      expect(result.css).toBe('padding: 0 2rem;');
+      expect(result.css).toBe('padding: 0 1.25rem;');
     });
 });
 
